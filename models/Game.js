@@ -20,7 +20,22 @@ Game.init(
         type: DataTypes.TEXT,
         allowNull: false
       },
-      
+      library_game_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        references: {
+          model: "library",
+          key: "game_id"
+        }
+      },
+      wishlist_game_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        references: {
+          model: "wishlist",
+          key: "game_id"
+        }
+      }
     },
     {
     sequelize,
@@ -30,5 +45,5 @@ Game.init(
   }
 );
 
-module.exports = User;
+module.exports = Game;
     
