@@ -2,9 +2,11 @@ const User = require("./User");
 const Library = require("./Library");
 const Wishlist = require("./Wishlist");
 const Game = require("./Game");
+const GameLibrary = require('./GameLibrary')
+const GameWishlist = require("./GameWishlist");
 
 User.hasOne(Library, {
-  foreignKey: "library_id",
+  foreignKey: "user_id",
 });
 
 Library.belongsTo(User, {
@@ -12,7 +14,7 @@ Library.belongsTo(User, {
 });
 
 User.hasOne(Wishlist, {
-  foreignKey: "wishlist_id",
+  foreignKey: "user_id",
 });
 
 Wishlist.belongsTo(User, {
@@ -20,19 +22,19 @@ Wishlist.belongsTo(User, {
 })
 
 Library.belongsToMany(Game, {
-  through: GameLibrary,
+  through: GameLibrary
 });
 
 Game.belongsToMany(Library, {
-  through:GamesLibrary,
+  through: GameLibrary
 })
 
 Wishlist.belongsToMany(Game, {
-  through: GameWishlist,
+  through: GameWishlist
 });
 
 Game.belongsToMany(Wishlist, {
-  through: GameWishlist,
+  through: GameWishlist
 })
 
-module.exports = { User, Library, Wishlist, Game };
+module.exports = { User, Library, Wishlist, Game, GameLibrary, GameWishlist };
