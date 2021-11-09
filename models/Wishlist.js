@@ -36,4 +36,4 @@ Wishlist.init(
     }
 );
 
-module.exports = wishList
+module.exports = Wishlist
