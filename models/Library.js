@@ -15,11 +15,7 @@ Library.init(
             type: DataTypes.BOOLEAN,
             allowNull: false
         },
-        games: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        library_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
