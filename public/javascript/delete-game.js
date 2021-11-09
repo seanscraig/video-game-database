@@ -17,8 +17,9 @@ async function deleteFormHandler(event) {
       
       if (response.ok) {
         document.location.replace('/dashboard/');
-      } else {
         alert("The game has been deleted");
+      } else {
+        alert(response.statusText);
       }
       
 }
