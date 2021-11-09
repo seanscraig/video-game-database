@@ -8,7 +8,7 @@ User.hasOne(Library, {
 });
 
 Library.belongsTo(User, {
-  foreignKey: "library_id",
+  foreignKey: "user_id",
 });
 
 User.hasOne(Wishlist, {
@@ -16,25 +16,23 @@ User.hasOne(Wishlist, {
 });
 
 Wishlist.belongsTo(User, {
-  foreignKey: "wishlist_id",
+  foreignKey: "user_id",
 })
 
-Library.hasMany(Game, {
-  foreignKey: "library_game_id",
-  onDelete: "CASCADE",
+Library.belongsToMany(Game, {
+  through: GameLibrary,
 });
 
-Game.belongsTo(Library, {
-  foreignKey: "library_game_id",
+Game.belongsToMany(Library, {
+  through:GamesLibrary,
 })
 
-Wishlist.hasMany(Game, {
-  foreignKey: "wishlist_game_id",
-  onDelete: "CASCADE",
+Wishlist.belongsToMany(Game, {
+  through: GameWishlist,
 });
 
-Game.belongsTo(Wishlist, {
-  foreignKey: "wishlist_game_id",
+Game.belongsToMany(Wishlist, {
+  through: GameWishlist,
 })
 
 module.exports = { User, Library, Wishlist, Game };

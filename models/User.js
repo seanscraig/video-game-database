@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const bcrypt = require("bcrypt");
+const sequelize = require("../config/connection");
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -13,12 +13,12 @@ User.init(
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey:true,
+      primaryKey: true,
       autoIncrement: true,
     },
     email: {
-      type: DataTypes.STRING, 
-      allowNull:false,
+      type: DataTypes.STRING,
+      allowNull: false,
       unique: true,
       validate: {
         isEmail: true,
@@ -28,11 +28,27 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    password:{
+    password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [8],
+      },
+    },
+    library_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "library",
+        key: "id",
+      },
+    },
+    wishlist_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "wishlist",
+        key: "id",
       },
     },
   },
@@ -56,7 +72,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: "user",
   }
 );
 
