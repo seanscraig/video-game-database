@@ -35,22 +35,6 @@ User.init(
         len: [8],
       },
     },
-    library_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "library",
-        key: "id",
-      },
-    },
-    wishlist_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "wishlist",
-        key: "id",
-      },
-    },
   },
   {
     hooks: {
