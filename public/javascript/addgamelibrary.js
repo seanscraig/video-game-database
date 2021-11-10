@@ -5,7 +5,7 @@ async function addToGameLibrary(event) {
     const gameImage = document.querySelector('#game-image') //may need to change id name depending on how we define it in html.
 
     const response = await fetch('/api/libraryRoutes', {
-        method: 'post',
+        method: 'POST',
         body: JSON.stringify({
             gameName,
             gameImage
