@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Game, GameLibrary, GameWishlist, Library, Wishlist } = require('../models');
+const { User, Game, GameLibrary, GameWishlist, Library, Wishlist } = require('../../models');
 router.get('/', (req, res) => {
     User.findAll({
             attributes: { exclude: ['[password'] }
