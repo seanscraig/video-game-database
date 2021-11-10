@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Adventure"
+  },
+  {
+    "name": "Action"
+  },
+  {
+    "name": "Casual"
+  },
+  {
+    "name": "Indie"
+  },
+  {
+    "name": "Puzzle"
+  },
+  {
+    "name": "Racing"
+  },
+  {
+    "name": "RPG"
+  },
+  {
+    "name": "Shooter"
+  },
+  {
+    "name": "Simulation"
+  },
+  {
+    "name": "Strategy"
+  }
+]

@@ -1,10 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
-
 const sequelize = require("../config/connection");
 
-class GameLibrary extends Model {}
+class GameGenre extends Model {}
 
-GameLibrary.init(
+GameGenre.init(
   {
     game_id: {
       type: DataTypes.INTEGER,
@@ -13,10 +12,10 @@ GameLibrary.init(
         key: "id",
       },
     },
-    library_id: {
+    genre_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "library",
+        model: "genre",
         key: "id",
       },
     },
@@ -26,8 +25,8 @@ GameLibrary.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "game_library",
+    modelName: "game_genre",
   }
 );
 
-module.exports = GameLibrary;
+module.exports = GameGenre
