@@ -15,7 +15,7 @@
             <a class="navbar-brand" href="#"><img src="../temp-images/VDG.png" alt="" width="30" height="24"></a>
             {{#if logged_in}}
             <form class="d-flex">
-                <input class="form-control me-2 w-auto" type="search" placeholder="Search games here" aria-label="Search">
+                <input class="form-control me-2 w-auto searchField" type="search" placeholder="Search games here" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
             <ul class="nav navbar-nav navbar-right mb-2 mb-lg-0">
@@ -47,6 +47,7 @@
 
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
+    <script src="/public/javascript/addgamelibrary.js"></script>
     {{/if}}
 
 </body>
