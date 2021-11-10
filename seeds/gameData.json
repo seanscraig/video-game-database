@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Forza Horizon 5",
+    "image": "forza-horizon-5.jpg",
+    "genres": ["Racing"]
+  },
+  {
+    "title": "Call of Duty: Vanguard",
+    "image": "call-of-duty-vanguard.jpg",
+    "genres": ["Shooter","Action"]
+  },
+  {
+    "title": "Just Dance 2022",
+    "image": "Just-Dance-2022.jpg",
+    "genres": ["Casual", "Simulation"]
+  },
+  {
+    "title": "The Witcher 3: Wild Hunt",
+    "image": "The-Witcher-3.jpg",
+    "genres": ["Adventure", "Action", "RPG"]
+  },
+  {
+    "title": "Age of Empires IV",
+    "image": "Age-of-Empries-4.jpg",
+    "genres": ["Strategy"]
+  },
+  {
+    "title": "Inscryption",
+    "image": "Inscryption.jpg",
+    "genres": ["Indie", "Strategy", "Adventure"]
+  },
+  {
+    "title": "Metroid Dread",
+    "image": "Metroid-Dread.jpg",
+    "genres": ["Adventure", "Action"]
+  },
+  {
+    "title": "Grand Theft Auto V",
+    "image": "Grand-Theift-Auto-5.jpg",
+    "genres": ["Action", "Adventure"]
+  },
+  {
+    "title": "BioShock",
+    "image": "Bioshock.jpg",
+    "genres": ["Shooter", "Action"]
+  },
+  {
+    "title": "League of Legends",
+    "image": "League-of-Legends.jpg",
+    "genres": ["Strategy","Action", "RPG"]
+  }
+]
