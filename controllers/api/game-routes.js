@@ -18,28 +18,28 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/id/:id", async (req, res) => {
-  try {
-    const dbGameData = await Game.findOne({
-      where: {
-        id: req.params.id,
-      },
-      attributes: ["id", "title", "image"],
-      include: Genre,
-    });
+// router.get("/id/:id", async (req, res) => {
+//   try {
+//     const dbGameData = await Game.findOne({
+//       where: {
+//         id: req.params.id,
+//       },
+//       attributes: ["id", "title", "image"],
+//       include: Genre,
+//     });
 
-    if (!dbGameData) {
-      res.status(404).json({ message: "No game found with this id." });
-      return;
-    }
+//     if (!dbGameData) {
+//       res.status(404).json({ message: "No game found with this id." });
+//       return;
+//     }
 
-    const game = dbGameData.get({ plain: true });
+//     const game = dbGameData.get({ plain: true });
 
-    res.status(200).json(game);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.status(200).json(game);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get("/title/:title", async (req, res) => {
   try {
