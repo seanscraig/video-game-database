@@ -1,3 +1,4 @@
+require('dotenv').config();
 const router = require("express").Router();
 const { Game, Genre } = require("../../models");
 
@@ -50,8 +51,7 @@ router.get("/title/:title", async (req, res) => {
     });
 
     if (!dbGameData) {
-      res.status(404).json({ message: "No game found with this title." });
-      return;
+      const gameAPIRequestURL = "https://api.rawg.io/api/games?key="
     }
 
     const game = dbGameData.get({ plain: true });
