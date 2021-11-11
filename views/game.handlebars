@@ -1,10 +1,12 @@
     <div class="container">
-        <img src="{{../temp-images/Minecraft.png}}" alt="..." width="40%" height="40%" class="game">
+        <img src="{{this.image}}" alt="..." width="40%" height="40%" class="game">
         <div class="title">
-            <p>{{this.name}}</p>
+            <p>{{this.title}}</p>
         </div>
         <div class="genre">
-            <p>{{this.genre}}</p>
+            {{#each genres as |genre|}}
+                <p>{{this.name}}</p>
+                {{/each}}
         </div>
         <div class="buttons">
             <button class="addLibrary">+ Add Game To Library</button>
