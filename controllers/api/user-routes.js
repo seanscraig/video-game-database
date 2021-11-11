@@ -60,15 +60,15 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
 
     User.create({
-        username: req.body.username,
+        user_name: req.body.user_name,
         password: req.body.password
     })
 
     .then(dbUserData => {
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
-                req.session.username = dbUserData.username;
-                req.session.loggedIn = true;
+                req.session.user_name = dbUserData.user_name;
+                req.session.logged_in = true;
 
                 res.json(dbUserData);
             });
@@ -99,7 +99,7 @@ router.post('/login', (req, res) => {
 
                 req.session.user_id = dbUserData.id;
                 req.session.user_name = dbUserData.user_name;
-                req.session.loggedIn = true;
+                req.session.logged_in = true;
 
                 res.json({ user: dbUserData, message: 'You are now logged in!' });
             });
@@ -111,7 +111,7 @@ router.post('/login', (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         req.session.destroy(() => {
             res.status(204).end();
         });

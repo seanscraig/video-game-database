@@ -1,16 +1,17 @@
 {{#if games}}
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
-   {{#each games.id}}
-    <div class="card h-100" id={{this.id}}>
-        <img src="{{this.imageSrc}}" alt="game image unavailable" class="card-img-top">
+   {{#each games as |game|}}
+    <div class="card h-50" id={{game.id}}>
+        <img src="{{game.image}}" alt="game image unavailable" class="card-img-top">
         <div class="card-body">
-          <h5 class="card-title">{{this.name}}</h5>
+          <h5 class="card-title">{{game.title}}</h5>
         </div>
     </div>
    {{/each}}
   </div>
 </div>
+{{/if}}
 {{!-- {{else}} --}}
   {{!-- <h3>No game recommendations generated yet</h3> --}}
 

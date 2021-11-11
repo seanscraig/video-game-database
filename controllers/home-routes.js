@@ -20,6 +20,10 @@ const withAuth = require('../utils/auth');
 //   }
 // });
 
+router.get("/", (req, res) => {
+    res.render("homepage");
+})
+
 router.get("/me", async (req, res) => {
   try {
     const dbLibraryData = await Library.findOne({
@@ -40,7 +44,10 @@ router.get("/me", async (req, res) => {
 
     const library = dbLibraryData.get({ plain: true });
 
-    res.status(200).json(library);
+    res.render("library", {
+      ...library,
+      logged_in: req.session.logged_in
+    })
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -50,7 +57,7 @@ router.get("/me", async (req, res) => {
 router.get('/login', (req, res) => {
   // If a session exists, redirect the request to the homepage
   if (req.session.logged_in) {
-    res.redirect('/');
+    res.redirect('/me');
     return;
   }
 
