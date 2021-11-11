@@ -20,4 +20,4 @@ async function addToGameLibrary(event) {
     }
 }
 
-document.querySelector('#add-to-game-library').addEventListener('submit', addToGameLibrary) // change id depending on what we name it in html
+// document.querySelector('#add-to-game-library').addEventListener('submit', addToGameLibrary) // change id depending on what we name it in html

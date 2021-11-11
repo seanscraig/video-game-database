@@ -3,7 +3,7 @@
   <div class="col">
   {{#each games as |game|}}
     <div class="card h-30" id={{game.id}}>
-        <img src="{{game.image}}" alt="game image unavailable" class="card-img-top">
+        <a href="/id/{{game.id}}"><img src="{{game.image}}" alt="game image unavailable" class="card-img-top"></a>
         <div class="card-body">
           <h5 class="card-title">{{game.title}}</h5>
         </div>
