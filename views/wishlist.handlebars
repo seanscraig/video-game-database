@@ -1,19 +1,16 @@
 {{#if games}}
-  <h3>Wish List</h3>
+<div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
-   {{#each recipes.recommend}}
+   {{#each games.id}}
     <div class="card h-100" id={{this.id}}>
-      <div class="card mt-2">
         <img src="{{this.imageSrc}}" alt="game image unavailable" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">{{this.name}}</h5>
-          <p class="card-text">
-            <a href="{{this.description}}" target="_blank">{{this.description}}</a>
-          </p>
         </div>
-      </div>
     </div>
    {{/each}}
   </div>
+</div>
 {{!-- {{else}} --}}
   {{!-- <h3>No game recommendations generated yet</h3> --}}
+

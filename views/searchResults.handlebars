@@ -1,19 +1,16 @@
 <div id="resultsTable">
   {{#if games}}
   <h3>Search Results</h3>
-  <div class="card-columns">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
     {{#each games}}
-    <div class="favs" id={{this.id}}>
-      <div class="card mt-2">
-        <img src="{{this.imageSrc}}" alt="game image unavailable" class="card-img-top img-thumbnail rounded">
-        <div class="card-body">
-          <h5 class="card-title">{{this.name}}</h5>
-          <p class="card-text">
-            <a href="{{this.description}}" target="_blank">{{this.description}}</a>
-          </p>
-        </div>
-      </div>
-    </div>
+    <div class="col">
+              <div class="card h-100" id={{this.id}}>
+                <img src="{{this.imageSrc}}" alt="game image unavailable" class="card-img-top img-thumbnail rounded">
+                <div class="card-body">
+                  <h5 class="card-title">{{this.name}}</h5>
+                </div>
+              </div>
+            </div>
     {{/each}}
   </div>
   {{else}}
