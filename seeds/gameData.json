@@ -1,52 +1,42 @@
 [
   {
     "title": "Forza Horizon 5",
-    "image": "forza-horizon-5.jpg",
-    "genres": ["Racing"]
+    "image": "https://media.rawg.io/media/games/082/082365507ff04d456c700157072d35db.jpg"
   },
   {
     "title": "Call of Duty: Vanguard",
-    "image": "call-of-duty-vanguard.jpg",
-    "genres": ["Shooter","Action"]
+    "image": "https://media.rawg.io/media/games/fa8/fa870a46d5e3e8cb1fa0a5e4f798ff2a.jpg"
   },
   {
     "title": "Just Dance 2022",
-    "image": "Just-Dance-2022.jpg",
-    "genres": ["Casual", "Simulation"]
+    "image": "https://media.rawg.io/media/games/83a/83a97b6261b74be24fdc33b9fc07cd49.jpg"
   },
   {
     "title": "The Witcher 3: Wild Hunt",
-    "image": "The-Witcher-3.jpg",
-    "genres": ["Adventure", "Action", "RPG"]
+    "image": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
   },
   {
     "title": "Age of Empires IV",
-    "image": "Age-of-Empries-4.jpg",
-    "genres": ["Strategy"]
+    "image": "https://media.rawg.io/media/games/23e/23e45acbf29bd241913ddcf5cf4053d5.jpg"
   },
   {
     "title": "Inscryption",
-    "image": "Inscryption.jpg",
-    "genres": ["Indie", "Strategy", "Adventure"]
+    "image": "https://media.rawg.io/media/games/99e/99e937e4cc518d641317116c9d8d9046.jpg"
   },
   {
     "title": "Metroid Dread",
-    "image": "Metroid-Dread.jpg",
-    "genres": ["Adventure", "Action"]
+    "image": "https://media.rawg.io/media/games/c26/c262f8b54b46edc72594c4a9bb8ee13e.jpg"
   },
   {
     "title": "Grand Theft Auto V",
-    "image": "Grand-Theift-Auto-5.jpg",
-    "genres": ["Action", "Adventure"]
+    "image": "https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"
   },
   {
     "title": "BioShock",
-    "image": "Bioshock.jpg",
-    "genres": ["Shooter", "Action"]
+    "image": "https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg"
   },
   {
     "title": "League of Legends",
-    "image": "League-of-Legends.jpg",
-    "genres": ["Strategy","Action", "RPG"]
+    "image": "https://media.rawg.io/media/games/78b/78bc81e247fc7e77af700cbd632a9297.jpg"
   }
 ]

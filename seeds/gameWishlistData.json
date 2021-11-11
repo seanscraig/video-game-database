@@ -1,0 +1,74 @@
+[
+  {
+    "game_id": 10,
+    "wishlist_id": 1
+  },
+  {
+    "game_id": 9,
+    "wishlist_id": 1
+  },
+  {
+    "game_id": 8,
+    "wishlist_id": 1
+  },
+  {
+    "game_id": 7,
+    "wishlist_id": 2
+  },
+  {
+    "game_id": 1,
+    "wishlist_id": 2
+  },
+  {
+    "game_id": 2,
+    "wishlist_id": 2
+  },
+  {
+    "game_id": 1,
+    "wishlist_id": 3
+  },
+  {
+    "game_id": 4,
+    "wishlist_id": 3
+  },
+  {
+    "game_id": 5,
+    "wishlist_id": 3
+  },
+  {
+    "game_id": 1,
+    "wishlist_id": 4
+  },
+  {
+    "game_id": 8,
+    "wishlist_id": 4
+  },
+  {
+    "game_id": 9,
+    "wishlist_id": 4
+  },
+  {
+    "game_id": 9,
+    "wishlist_id": 5
+  },
+  {
+    "game_id": 2,
+    "wishlist_id": 5
+  },
+  {
+    "game_id": 3,
+    "wishlist_id": 5
+  },
+  {
+    "game_id": 4,
+    "wishlist_id": 6
+  },
+  {
+    "game_id": 10,
+    "wishlist_id": 6
+  },
+  {
+    "game_id": 1,
+    "wishlist_id": 6
+  }
+]
