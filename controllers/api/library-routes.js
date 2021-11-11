@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Library, Game, GameLibrary, Genre } = require("../../models");
+const { Library, Game, GameLibrary } = require("../../models");
 
 router.get("/me", async (req, res) => {
   try {
@@ -11,10 +11,6 @@ router.get("/me", async (req, res) => {
       include: {
         model: Game,
         through: GameLibrary,
-        // as: "game_in_library",
-        // include: {
-        //   model: Game,
-        // },
       },
     });
 
