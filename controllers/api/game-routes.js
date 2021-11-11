@@ -5,63 +5,59 @@ router.get("/", async (req, res) => {
   try {
     const dbGameData = await Game.findAll({
       attributes: ["id", "title", "image"],
-      include: Genre
+      include: Genre,
     });
-  
-    const games = dbGameData.map((game) => game.get({plain: true}));
-  
+
+    const games = dbGameData.map((game) => game.get({ plain: true }));
+
     res.status(200).json(games);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/id/:id', async (req, res) => {
+router.get("/id/:id", async (req, res) => {
   try {
     const dbGameData = await Game.findOne({
       where: {
-        id: req.params.id
+        id: req.params.id,
       },
       attributes: ["id", "title", "image"],
-      include: Genre
+      include: Genre,
     });
 
     if (!dbGameData) {
-      res.status(404).json({message: "No game found with this id."});
+      res.status(404).json({ message: "No game found with this id." });
       return;
     }
 
-    const game = dbGameData.get({plain: true});
+    const game = dbGameData.get({ plain: true });
 
     res.status(200).json(game);
-
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
 
-router.get('/title/:title', async (req, res) => {
+router.get("/title/:title", async (req, res) => {
   try {
     const dbGameData = await Game.findOne({
       where: {
-        title: req.params.title
+        title: req.params.title,
       },
       attributes: ["id", "title", "image"],
-      include: Genre
+      include: Genre,
     });
 
     if (!dbGameData) {
-      res.status(404).json({message: "No game found with this title."});
+      res.status(404).json({ message: "No game found with this title." });
       return;
     }
 
-    const game = dbGameData.get({plain: true});
+    const game = dbGameData.get({ plain: true });
 
     res.status(200).json(game);
-
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
