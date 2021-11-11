@@ -20,7 +20,10 @@ router.get("/me", async (req, res) => {
     }
 
     const wishlist = dbWishlistData.get({ plain: true });
-    res.render("wishlist", wishlist);
+    res.render("wishlist", {
+      ...wishlist,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
