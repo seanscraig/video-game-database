@@ -15,10 +15,10 @@ Wishlist.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
-    game_wishlist: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
+    // game_wishlist: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

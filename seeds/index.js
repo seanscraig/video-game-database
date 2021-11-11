@@ -12,41 +12,53 @@ const userData = require("./userData.json");
 const genreData = require("./genreData.json");
 const gameData = require("./gameData.json");
 const gameGenreData = require("./gameGenreData.json");
+const libraryData = require("./libraryData.json");
+const wishlistData = require("./wishlistData.json");
+const gameLibraryData = require("./gameLibraryData.json");
+const gameWishlistData = require("./gameWishlistData.json");
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const users = await User.bulkCreate(userData, {
+  await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
 
-  // console.log(users);
-
-  const genres = await Genre.bulkCreate(genreData, {
+  await Genre.bulkCreate(genreData, {
     returning: true,
   });
 
-  // console.log(genres);
-
-  const games = await Game.bulkCreate(gameData, {
+  await Game.bulkCreate(gameData, {
     returning: true,
   });
-
-  // console.log(games);
 
   for (pair of gameGenreData) {
-    const game = await Game.findOne({where: {"id": pair.game_id}});
-    const genre = await Genre.findOne({where: {"id": pair.genre_id}});
+    const game = await Game.findOne({ where: { id: pair.game_id } });
+    const genre = await Genre.findOne({ where: { id: pair.genre_id } });
     await game.addGenre(genre);
   }
 
-  const gameGenre = await Game.findAll({ include: Genre });
+  await Library.bulkCreate(libraryData, {
+    returning: true,
+  });
 
-  const gameGenreArr = gameGenre.map((genre) => genre.get({ plain: true }));
+  await Wishlist.bulkCreate(wishlistData, {
+    returning: true,
+  });
 
-  for (let i = 0; i < gameGenreArr.length; i++) {
-    console.log(gameGenreArr[i]);
+  for (pair of gameLibraryData) {
+    const game = await Game.findOne({ where: { id: pair.game_id } });
+    const library = await Library.findOne({ where: { id: pair.library_id } });
+    await library.addGame(game);
+  }
+
+  for (pair of gameWishlistData) {
+    const game = await Game.findOne({ where: { id: pair.game_id } });
+    const wishlist = await Wishlist.findOne({
+      where: { id: pair.wishlist_id },
+    });
+    await wishlist.addGame(game);
   }
 
   process.exit(0);

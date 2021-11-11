@@ -1,0 +1,26 @@
+[
+  {
+    "is_public": true,
+    "user_id": 1
+  },
+  {
+    "is_public": true,
+    "user_id": 2
+  },
+  {
+    "is_public": true,
+    "user_id": 3
+  },
+  {
+    "is_public": true,
+    "user_id": 4
+  },
+  {
+    "is_public": true,
+    "user_id": 5
+  },
+  {
+    "is_public": true,
+    "user_id": 6
+  }
+]
