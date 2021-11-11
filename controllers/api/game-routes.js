@@ -1,5 +1,6 @@
-require('dotenv').config();
+require("dotenv").config();
 const router = require("express").Router();
+const axios = require("axios");
 const { Game, Genre } = require("../../models");
 
 router.get("/", async (req, res) => {
@@ -51,13 +52,26 @@ router.get("/title/:title", async (req, res) => {
     });
 
     if (!dbGameData) {
-      const gameAPIRequestURL = "https://api.rawg.io/api/games?key="
+      const gameAPIRequestURL = `https://api.rawg.io/api/games?key=${process.env.API_KEY}&search=${req.params.title}`;
+
+      axios({
+        method: "get",
+        url: gameAPIRequestURL,
+        responseType: "jsonp",
+      }).then(async function (response) {
+        const result = response.data.results[0];
+        const title = result.name;
+        const image = result.background_image;
+        const game = await Game.create({ title, image });
+        return res.status(200).json(game);
+      });
+    } else {
+      const game = dbGameData.get({ plain: true });
+
+      res.status(200).json(game);
     }
-
-    const game = dbGameData.get({ plain: true });
-
-    res.status(200).json(game);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
