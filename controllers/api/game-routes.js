@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Game, Genre, GameGenre } = require("../../models");
+const { Game, Genre } = require("../../models");
 
 router.get("/", async (req, res) => {
   try {
@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/id/:id', async (req, res) => {
   try {
     const dbGameData = await Game.findOne({
       where: {
@@ -26,8 +26,6 @@ router.get('/:id', async (req, res) => {
       include: Genre
     });
 
-    console.log(dbGameData);
-
     if (!dbGameData) {
       res.status(404).json({message: "No game found with this id."});
       return;
@@ -35,7 +33,30 @@ router.get('/:id', async (req, res) => {
 
     const game = dbGameData.get({plain: true});
 
-    console.log(game);
+    res.status(200).json(game);
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/title/:title', async (req, res) => {
+  try {
+    const dbGameData = await Game.findOne({
+      where: {
+        title: req.params.title
+      },
+      attributes: ["id", "title", "image"],
+      include: Genre
+    });
+
+    if (!dbGameData) {
+      res.status(404).json({message: "No game found with this title."});
+      return;
+    }
+
+    const game = dbGameData.get({plain: true});
 
     res.status(200).json(game);
 
@@ -43,6 +64,6 @@ router.get('/:id', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-})
+});
 
 module.exports = router;
