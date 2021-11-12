@@ -65,8 +65,6 @@ router.post('/', async (req, res) => {
         email: req.body.email
     })
 
-    console.log(newUser)
-
     await Library.create({
         user_id: newUser.id,
         is_public: true
