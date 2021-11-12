@@ -85,6 +85,8 @@ router.get("/title/:title", async (req, res) => {
       include: Genre,
     });
 
+    console.log(dbGameData);
+
     if (!dbGameData) {
       const gameAPIRequestURL = `https://api.rawg.io/api/games?key=${process.env.API_KEY}&search=${req.params.title}`;
 
@@ -104,6 +106,8 @@ router.get("/title/:title", async (req, res) => {
       });
     } else {
       const game = dbGameData.get({ plain: true });
+
+      console.log(game);
 
       res.render("game", {
         ...game,

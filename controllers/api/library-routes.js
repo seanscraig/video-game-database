@@ -35,7 +35,7 @@ router.post("/", withAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
-    const game = await Game.findOne({ where:{id: req.body.game_id}});
+    const game = await Game.findOne({ where:{title: req.body.title}});
     const newGame = await library.addGame(game);
     res.status(200).json(newGame);
   } catch (err) {
