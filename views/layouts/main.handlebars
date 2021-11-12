@@ -10,38 +10,36 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark navbar1 p-5">
         <div class="container-fluid ">
-            <a class="navbar-brand " href="/"><img src="/temp-images/VDG.png" alt="" width="30" height="24"></a>
+            <a class="navbar-brand" href="/"><img src="/temp-images/VDG.png" alt="" width="100" height="68"></a>
             {{#if logged_in}}
             <form class="d-flex">
                 <input class="form-control me-2 w-auto searchField" type="search" placeholder="Search games here" aria-label="Search">
                 <button class="btn btn-outline-success search" type="submit">Search</button>
             </form>
             <ul class="nav navbar-nav navbar-right mb-2 mb-lg-0">
-                <li class="nav-item">
+                {{!-- <li class="nav-item">
                     <a class="nav-link active text-info" aria-current="page" href="#">Profile</a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
-                    <button class="nav-link active text-info log" id="logout">Sign Out</button>
+                    <a class="link" id="logout">Sign Out</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <nav class="navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar-expand-lg navbar-light bg-light p-3 second-nav">
         <div class="d-flex justify-content-around">
             <a class="nav-link active text-info library" aria-current="page" href="/me">Library</a>
             <a class="nav-link active text-info wishlistLibrary" href="/wishlist/me">Wishlist</a>
         </div>
     </nav>
     {{else}}
-    <a class="link"href="/login">Login</a>
+    <a class="link loginButton" href="/login">Login</a>
     </nav>
     {{/if}}
 
-<div>  
     {{{ body }}}
-</div>
 
     {{#if logged_in}}
     <script src="/javascript/logout.js"></script>

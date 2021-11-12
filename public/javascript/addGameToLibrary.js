@@ -12,7 +12,7 @@ async function addToGameLibrary(event) {
   });
 
   if (response.ok) {
-    alert("This game was added to your library");
+    document.location.replace("/me")
   } else {
     alert(response.statusText);
   }
