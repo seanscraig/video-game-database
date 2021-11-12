@@ -43,7 +43,7 @@ body {
 
 a.link.loginButton {
     text-decoration: none;
-    color: white;
+    color: #1DABF0;
     font-size: 2rem;
 }
 
@@ -72,7 +72,7 @@ a.link.loginButton {
 
 a#logout {
     text-decoration: none;
-    color: white;
+    color: #1DABF0;
     font-size: 2rem;
 }
 

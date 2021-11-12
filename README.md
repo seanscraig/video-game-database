@@ -11,7 +11,7 @@ User can make their profile public or private so others can compare games.
 User databases are specfic to the login and can only be updated if you are logged in otherwise it it can only be viewed.
 
 ## General Info
-The app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.[Link to deployed application](https://....herokuapp.com/)
+The app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.[Link to deployed application](https://vast-lake-35863.herokuapp.com/)
 
 Image showcasing the application 
 
@@ -30,4 +30,3 @@ Project is created with
 * [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
 * [Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
 * [bcrypt](https://www.npmjs.com/package/bcrypt)
-* [Axios](https://axios-http.com/docs/intro)
