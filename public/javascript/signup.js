@@ -5,10 +5,6 @@ async function signupSubmit(event) {
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
 
-    console.log(user_name);
-    console.log(email);
-    console.log(password);
-
     if (user_name && password) {
         const response = await fetch('/api/users', {
             method: 'POST',
@@ -20,7 +16,6 @@ async function signupSubmit(event) {
             headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
-            console.log('Account created page!')
             document.location.replace('/me');
 
         } else {

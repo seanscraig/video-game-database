@@ -111,8 +111,6 @@ router.get("/title/:title", async (req, res) => {
     } else {
       const game = dbGameData.get({ plain: true });
 
-      console.log(game);
-
       res.render("game", {
         ...game,
         logged_in: req.session.logged_in
