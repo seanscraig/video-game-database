@@ -56,7 +56,7 @@ router.get("/id/:id", async (req, res) => {
 
     const game = dbGameData.get({ plain: true });
 
-    res.render("game", {
+    res.render("singleGameLibrary", {
       ...game,
       logged_in: req.session.logged_in
     })
@@ -64,6 +64,10 @@ router.get("/id/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/signup', (req, res) => {
+    res.render('signup')
+})
 
 router.get('/login', (req, res) => {
   // If a session exists, redirect the request to the homepage

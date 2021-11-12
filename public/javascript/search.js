@@ -1,49 +1,17 @@
-$(document).ready(function() {
-	// Game Search 
-	$("#gameSearch").on("click", function(event) {
-		event.preventDefault();
+async function searchGames(event) {
+    event.preventDefault();
 
-		searchGames({ gameType: $("#searchTerm").val().trim() });
-	});
+    var searchResult = event.target.previousElementSibling.value
 
-	// Advance Search button click event 
-	$("#searchGameAdv").on("click", function (event) {
-		event.preventDefault();
-
-		// Variables for user input parameters
-		const genreType = $("#genreType option:selected");
-		
-		// Collect user inputs
-		var searchParam = {
-			game_genre: genreType.is(":checked", function () {
-				genreType.prop("checked", true);
-			}),
-		};
-
-		if (genreType) {
-			searchParam.genreType = genreType;
-		}
-		
-		searchGames(searchParam);
-	});
-});
-
-// Search Games in the database
-function searchGames(searchParam) {
-	const url = "/api/search/" + $.param(searchParam);
-	console.log("URL:", url);
-	search(searchParam).then(function (data) {
-		console.log("Game search completed successfully");
-		window.location.href = url;
-	}).catch(function(error) {
-		console.log("Game search failed", error);
-	});
+    const response = await fetch('/title/:title', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    });
+    if (response.ok) {
+        document.location.replace(`/title/${searchResult}`)
+    } else {
+        alert(response.statusText)
+    }
 }
 
-// AJAX http request for game search
-function search(searchParam) {
-	return $.ajax({
-		url: searchParam,
-		type: "GET",
-	});
-}
+document.querySelector('.search').addEventListener('click', searchGames)
