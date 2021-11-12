@@ -1,7 +1,7 @@
     <div class="container">
         <img src="{{this.image}}" alt="..." width="40%" height="40%" class="game">
         <div class="title">
-            <p>{{this.title}}</p>
+            <p id="title">{{this.title}}</p>
         </div>
         <div class="genre">
             {{#each genres as |genre|}}
@@ -9,7 +9,10 @@
                 {{/each}}
         </div>
         <div class="buttons">
-            <button class="addLibrary">+ Add Game To Library</button>
-            <button class="addWishlist">+ Add Game To Wishlist</button>
+            <button class="btn btn-primary" id="add-to-library-btn">+ Add Game To Library</button>
+            <button class="btn btn-success" id="add-to-wishlist-btn">+ Add Game To Wishlist</button>
         </div>
     </div>
+
+<script src="/javascript/addGameToLibrary.js"></script>
+<script src="/javascript/addGameToWishlist.js"></script>
