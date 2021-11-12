@@ -1,11 +1,11 @@
     <div class="container">
-        <img src="{{this.image}}" alt="..." width="40%" height="40%" class="game">
+        <img src="{{this.image}}" alt="..." width="70%" height="70%" class="game">
         <div class="title">
             <p id="title">{{this.title}}</p>
         </div>
         <div class="genre">
             {{#each genres as |genre|}}
-                <p>{{this.name}}</p>
+                <p class="all-genres">{{this.name}}</p>
                 {{/each}}
         </div>
         <div class="buttons">
