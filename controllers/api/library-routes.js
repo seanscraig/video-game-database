@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Library, Game, GameLibrary } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 // router.get("/me", async (req, res) => {
 //   try {
@@ -27,5 +28,20 @@ const { Library, Game, GameLibrary } = require("../../models");
 //   }
 // });
 
+router.post("/", withAuth, async (req, res) => {
+  try {
+    const library = await Library.findOne({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+    const game = await Game.findOne({ where:{title: req.body.title}});
+    const newGame = await library.addGame(game);
+    res.status(200).json(newGame);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

@@ -22,5 +22,4 @@ async function loginFormHandler(event) {
     }
   }
   
-console.log("js is connected!")
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);

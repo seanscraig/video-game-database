@@ -3,29 +3,13 @@ const { User, Library, Game, GameLibrary, Genre } = require('../models');
 const withAuth = require('../utils/auth');
 const axios = require('axios')
 
-// router.get('/', withAuth, async (req, res) => {
-//   try {
-//     const userData = await User.findAll({
-//       attributes: { exclude: ['password'] },
-//       order: [['name', 'ASC']],
-//     });
 
-//     const users = userData.map((project) => project.get({ plain: true }));
-
-//     res.render('homepage', {
-//       users,
-//       logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 router.get("/", (req, res) => {
   res.render("homepage");
 })
 
-router.get("/me", async (req, res) => {
+router.get("/me", withAuth, async (req, res) => {
   try {
     const dbLibraryData = await Library.findOne({
       where: {
@@ -72,7 +56,7 @@ router.get("/id/:id", async (req, res) => {
 
     const game = dbGameData.get({ plain: true });
 
-    res.render("game", {
+    res.render("singleGameLibrary", {
       ...game,
       logged_in: req.session.logged_in
     })
@@ -80,6 +64,10 @@ router.get("/id/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/signup', (req, res) => {
+    res.render('signup')
+})
 
 router.get('/login', (req, res) => {
   // If a session exists, redirect the request to the homepage
@@ -100,6 +88,8 @@ router.get("/title/:title", async (req, res) => {
       attributes: ["id", "title", "image"],
       include: Genre,
     });
+
+    console.log(dbGameData);
 
     if (!dbGameData) {
       const gameAPIRequestURL = `https://api.rawg.io/api/games?key=${process.env.API_KEY}&search=${req.params.title}`;
