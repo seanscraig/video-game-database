@@ -57,11 +57,24 @@ router.get('/:id', (req, res) => {
 });
 
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
 
-    User.create({
+    const newUser = await User.create({
         user_name: req.body.user_name,
-        password: req.body.password
+        password: req.body.password,
+        email: req.body.email
+    })
+
+    console.log(newUser)
+
+    await Library.create({
+        user_id: newUser.id,
+        is_public: true
+    })
+
+    await Wishlist.create({
+        user_id: newUser.id,
+        is_public: true
     })
 
     .then(dbUserData => {

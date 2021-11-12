@@ -65,6 +65,10 @@ router.get("/id/:id", async (req, res) => {
   }
 });
 
+router.get('/signup', (req, res) => {
+    res.render('signup')
+})
+
 router.get('/login', (req, res) => {
   // If a session exists, redirect the request to the homepage
   if (req.session.logged_in) {
