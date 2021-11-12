@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Library, Game, GameLibrary, Genre } = require('../models');
+const { Library, Game, GameLibrary, Genre } = require('../models');
 const withAuth = require('../utils/auth');
 const axios = require('axios')
 
@@ -34,7 +34,6 @@ router.get("/me", withAuth, async (req, res) => {
       logged_in: req.session.logged_in
     })
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -89,8 +88,6 @@ router.get("/title/:title", async (req, res) => {
       include: Genre,
     });
 
-    console.log(dbGameData);
-
     if (!dbGameData) {
       const gameAPIRequestURL = `https://api.rawg.io/api/games?key=${process.env.API_KEY}&search=${req.params.title}`;
 
@@ -102,24 +99,23 @@ router.get("/title/:title", async (req, res) => {
         const result = response.data.results[0];
         const title = result.name;
         const image = result.background_image;
+
         const game = await Game.create({ title, image });
-        await res.render("game", {
-          ...game,
+        const plain = game.get({plain: true});
+        
+        res.render("game", {
+          ...plain,
           logged_in: req.session.logged_in
         })
       });
     } else {
       const game = dbGameData.get({ plain: true });
-
-      console.log(game);
-
       res.render("game", {
         ...game,
         logged_in: req.session.logged_in
       })
     }
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
