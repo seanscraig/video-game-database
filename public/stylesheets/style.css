@@ -18,3 +18,58 @@
     margin-top: -100px;
     margin-left: -200px;
 }
+
+a.link.loginButton {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+}
+
+.second-nav {
+    font-size: 2rem;
+}
+
+.password-input-login {
+    position: relative;
+    left: 2px;
+}
+
+.login-button {
+    margin-top: 5px;
+}
+
+.password-signup-input {
+    position: relative;
+    left: 5px;
+}
+
+.email-signup-input {
+    position: relative;
+    left: 33px;
+}
+
+a#logout {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+}
+
+.container {
+    text-align: center;
+    display: block;
+}
+
+.game {
+    border: 5px solid black;
+    margin-top: 200px;
+}
+
+.title {
+    font-weight: 900;
+    text-align: center;
+}
+
+.genre {
+    font-weight: 900;
+    text-align: center;
+}

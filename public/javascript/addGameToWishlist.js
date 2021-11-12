@@ -12,7 +12,7 @@ async function addToGameWishlist(event) {
   });
 
   if (response.ok) {
-    alert("This game was added to your wishlist");
+    document.location.replace('/wishlist/me')
   } else {
     alert(response.statusText);
   }
