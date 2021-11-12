@@ -30,3 +30,4 @@ Project is created with
 * [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
 * [Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
 * [bcrypt](https://www.npmjs.com/package/bcrypt)
+* [Axios](https://axios-http.com/docs/intro)
