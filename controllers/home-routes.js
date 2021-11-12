@@ -101,6 +101,7 @@ router.get("/title/:title", async (req, res) => {
         const title = result.name;
         const image = result.background_image;
         const game = await Game.create({ title, image });
+        console.log(game)
         await res.render("game", {
           ...game,
           logged_in: req.session.logged_in
