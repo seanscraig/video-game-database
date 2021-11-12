@@ -3,8 +3,6 @@ async function addToGameLibrary(event) {
 
   const title = document.querySelector("#title").textContent;
 
-  console.log(title);
-
   const response = await fetch("/api/librarys/", {
     method: "POST",
     body: JSON.stringify({
@@ -14,7 +12,7 @@ async function addToGameLibrary(event) {
   });
 
   if (response.ok) {
-    alert("This game was added to your library");
+    document.location.replace("/me")
   } else {
     alert(response.statusText);
   }

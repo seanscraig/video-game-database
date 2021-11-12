@@ -3,8 +3,6 @@ async function addToGameWishlist(event) {
 
   const title = document.querySelector("#title").textContent;
 
-  console.log(title);
-
   const response = await fetch("/api/wishlists/", {
     method: "POST",
     body: JSON.stringify({
@@ -14,7 +12,7 @@ async function addToGameWishlist(event) {
   });
 
   if (response.ok) {
-    alert("This game was added to your wishlist");
+    document.location.replace('/wishlist/me')
   } else {
     alert(response.statusText);
   }
