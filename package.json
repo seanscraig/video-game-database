@@ -1,7 +1,7 @@
 {
   "name": "video-game-database",
   "version": "1.0.0",
-  "description": "",
+  "description": "## User Story",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -26,6 +26,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
+    "inquirer": "^8.2.0",
     "mysql2": "^2.3.3-rc.0",
     "sequelize": "^6.9.0"
   },
