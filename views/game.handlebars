@@ -3,6 +3,11 @@
         <div class="title">
             <p id="title">{{this.title}}</p>
         </div>
+        <div class="genre">
+            {{#each genres as |genre|}}
+                <p>{{this.name}}</p>
+                {{/each}}
+        </div>
         <div class="buttons">
             <button class="btn btn-primary" id="add-to-library-btn">+ Add Game To Library</button>
             <button class="btn btn-success" id="add-to-wishlist-btn">+ Add Game To Wishlist</button>
