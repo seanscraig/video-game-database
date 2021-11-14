@@ -1,22 +1,33 @@
-    <div class="container">
+<div class="container">
 
-        <img src="{{image}}" alt="..." width="70%" height="70%" class="game">
+  <img src="{{image}}" alt="..." width="70%" height="70%" class="game" />
 
-        <div class="title">
-            <p id="title">{{title}}</p>
-        </div>
-        <div class="all-genres">
-            {{#each genres as |genre|}}
+  <div class="title">
+    <p id="title">{{title}}</p>
+  </div>
+  <div class="all-genres">
+    {{#each genres as |genre|}}
 
-                <p>{{name}}</p>
+      <p>{{name}}</p>
 
-                {{/each}}
-        </div>
-        <div class="buttons">
-            <button class="btn btn-primary" id="add-to-library-btn">+ Add Game To Library</button>
-            <button class="btn btn-success" id="add-to-wishlist-btn">+ Add Game To Wishlist</button>
-        </div>
-    </div>
+    {{/each}}
+  </div>
+  <div class="buttons">
+    <button class="btn btn-primary" id="add-to-library-btn">+ Add Game To
+      Library</button>
+    <button class="btn btn-success" id="add-to-wishlist-btn">+ Add Game To
+      Wishlist</button>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal Content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="modal-text"></p>
+  </div>
+</div>
 
 <script src="/javascript/addGameToLibrary.js"></script>
 <script src="/javascript/addGameToWishlist.js"></script>
