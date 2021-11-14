@@ -1,17 +1,27 @@
 {{#if games}}
-<div class="row">
-  <div class="card-group">
-   {{#each games as |game|}}
-    <div class="card h-30" id={{game.id}}>
-        <a href="/id/{{game.id}}"><img src="{{game.image}}" alt="game image unavailable" class="card-img-top"></a>
-        <div class="card-body">
-          <h5 class="card-title">{{game.title}}</h5>
+  <div class="row">
+    <div class="card-group">
+      {{#each games as |game|}}
+        <div class="card h-30" id={{game.id}}>
+          <a href="/id/{{game.id}}"><img
+              src="{{game.image}}"
+              alt="game image unavailable"
+              class="card-img-top"
+            /></a>
+          <div class="card-body">
+            <h5 class="card-title">{{game.title}}</h5>
+          </div>
         </div>
+      {{/each}}
     </div>
-   {{/each}}
+  </div>
+{{/if}}
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal Content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="modal-text"></p>
   </div>
 </div>
-{{/if}}
-{{!-- {{else}} --}}
-  {{!-- <h3>No game recommendations generated yet</h3> --}}
-

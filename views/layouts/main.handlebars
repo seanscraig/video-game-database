@@ -13,8 +13,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark navbar1 p-5">
-        <div class="container-fluid ">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark navbar1 p-4">
+        <div class="container-fluid">
             <a class="navbar-brand" href="/"><img src="/temp-images/VDG.png" alt="" width="50" height="24"></a>
             {{#if logged_in}}
             <form class="d-flex">
@@ -36,7 +36,8 @@
             <a class="nav-link active text-info library" aria-current="page" href="/me">Library</a>
             <a class="nav-link active text-info wishlistLibrary" href="/wishlist/me">Wishlist</a>
         </div>
-    </nav>
+    </nav>    
+
     {{else}}
     <a class="link loginButton" href="/login">Login</a>
     </nav>
@@ -44,6 +45,15 @@
 
     {{{ body }}}
 
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal Content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-text"></p>
+        </div>
+    </div>
     {{#if logged_in}}
     <script src="/javascript/logout.js"></script>
 
